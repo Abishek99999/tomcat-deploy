@@ -16,12 +16,47 @@
    31  sudo nano /opt/tomcat/webapps/manager/META-INF/context.xml
    32  sudo nano /opt/tomcat/webapps/host-manager/META-INF/context.xml
    33  sudo nano /etc/systemd/system/tomcat.service
+
+[Unit]
+Description=Tomcat webs servlet container
+After=network.target
+
+[Service]
+Type=forking
+
+User=tomcat
+Group=tomcat
+RestartSec=10
+Restart=always
+Environment="JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64"
+Environment="JAVA_OPTS=-Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom"
+
+Environment="CATALINA_BASE=/opt/tomcat"
+Environment="CATALINA_HOME=/opt/tomcat"
+Environment="CATALINA_PID=/opt/tomcat/temp/tomcat.pid"
+Environment="CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
+
+ExecStart=/opt/tomcat/bin/startup.sh
+ExecStop=/opt/tomcat/bin/shutdown.sh
+
+[Install]
+WantedBy=multi-user.target
+   
    34  sudo systemctl daemon-reload
    35  sudo systemctl start tomcat
    36  sudo systemctl enable tomcat
    37  cat /opt/tomcat/webapps/host-manager/META-INF/context.xml
    38  cat /opt/tomcat/webapps/manager/META-INF/context.xml
    39  cat /opt/tomcat/conf/tomcat-users.xml
+  <role rolename="admin"/>
+<role rolename="admin-gui"/>
+<role rolename="manager"/>
+<role rolename="manager-gui"/>
+
+<user username="abishek" password="123" roles="admin,admin-gui,manager,manager-gui"/>
+
+
+   
    40  nano /opt/tomcat/conf/tomcat-users.xml
    41  cat  /opt/tomcat/conf/tomcat-users.xml
    42  history
