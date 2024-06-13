@@ -67,3 +67,7 @@ root@server2:~#
 
 add java-sample-project
 https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war
+
+2..
+
+https://github.com/hammad-hub/java-hello-world-webapp.git
