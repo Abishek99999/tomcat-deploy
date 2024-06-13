@@ -61,3 +61,9 @@ WantedBy=multi-user.target
    41  cat  /opt/tomcat/conf/tomcat-users.xml
    42  history
 root@server2:~#
+
+
+
+
+add java-sample-project
+https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war
