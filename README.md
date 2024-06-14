@@ -66,7 +66,7 @@ root@server2:~#
 ####################################################################################################################################
 IN AWS
 
-wget apache-tomcat-9.0.89.tar.gz
+wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.89/bin/apache-tomcat-9.0.89.tar.gz
 tar -zxvf apache-tomcat-9.0.89.tar.gz
 root@ip-172-31-30-171:~/apache-tomcat-9.0.89/conf#
 root@ip-172-31-30-171:~/apache-tomcat-9.0.89/conf# cat tomcat-users.xml
