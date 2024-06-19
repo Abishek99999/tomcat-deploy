@@ -195,3 +195,21 @@ https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war
 2..
 
 https://github.com/hammad-hub/java-hello-world-webapp.git
+
+
+trooubleshooting issue
+<!--
+  <role rolename="tomcat"/>
+  <role rolename="role1"/>
+  <user username="tomcat" password="<must-be-changed>" roles="tomcat"/>
+  <user username="both" password="<must-be-changed>" roles="tomcat,role1"/>
+  <user username="role1" password="<must-be-changed>" roles="role1"/>
+-->
+     <role rolename="admin"/>
+    <role rolename="admin-gui"/>
+    <role rolename="manager"/>
+    <role rolename="manager-gui"/>
+    <role rolename="manager-script"/> <!-- Add manager-script role -->
+
+    <user username="abishek" password="123" roles="admin,admin-gui,manager,manager-gui,manager-script"/> <!-- Add manager-script role -->
+</tomcat-users>
