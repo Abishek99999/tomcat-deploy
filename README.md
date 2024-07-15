@@ -5,10 +5,11 @@
    20  apt install default-jdk
    21  apt upgrade -y
    22  sudo useradd -r -m -U -d /opt/tomcat -s /bin/false tomcat
-   23  wget https://downloads.apache.org/tomcat/tomcat-10/v10.1.19/bin/apache-tomcat-10.1.19.tar.gz
-   24  wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.24/bin/apache-tomcat-10.1.24.tar.gz
+   23 
+   24 wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.90/bin/apache-tomcat-9.0.90.tar.gz
    25  sudo tar xzf apache-tomcat-*.tar.gz -C /opt/tomcat
-   26  tar -xvzf apache-tomcat-10.1.24.tar.gz -C /opt/tomcat --strip-components=1
+   26  tar -xvzf apache-tomcat-9.0.90.tar.gz -C /opt/tomcat --strip-components=1
+
    27  mkdir -p /opt/tomcat
    28  tar -xvzf apache-tomcat-10.1.24.tar.gz -C /opt/tomcat --strip-components=1
    29  sudo chown -R tomcat: /opt/tomcat
